@@ -1,8 +1,16 @@
 package com.anokmik.library;
 
+/**
+ * Custom library main class.
+ */
 public class CustomLibrary {
 
-    private static String simpleCall() {
+    /**
+     * Simple library method call.
+     *
+     * @return Hello world!
+     */
+    public static String simpleCall() {
         return "Hello world";
     }
 
