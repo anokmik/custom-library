@@ -1,9 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
-def baseName = "Beanstalk_SDK"
-def version = "1.0.0"
-
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.3"
@@ -27,16 +24,6 @@ android {
     dexOptions {
         dexInProcess true
         javaMaxHeapSize "2g"
-    }
-    libraryVariants.all { variant ->
-        variant.outputs.each { output ->
-            def outputFile = output.outputFile
-            def extension = "aar"
-            if (outputFile != null && outputFile.name.endsWith(extension)) {
-                def fileName = "${baseName}_${version}.${extension}"
-                output.outputFile = new File(outputFile.parent, fileName)
-            }
-        }
     }
 }
 
