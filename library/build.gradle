@@ -28,13 +28,12 @@ android {
         dexInProcess true
         javaMaxHeapSize "2g"
     }
-    publishNonDefault true
     libraryVariants.all { variant ->
         variant.outputs.each { output ->
             def outputFile = output.outputFile
             def extension = "aar"
             if (outputFile != null && outputFile.name.endsWith(extension)) {
-                def fileName = "${baseName}_${version}_${variant.name}.${extension}"
+                def fileName = "${baseName}_${version}.${extension}"
                 output.outputFile = new File(outputFile.parent, fileName)
             }
         }
